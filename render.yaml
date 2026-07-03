@@ -1,0 +1,15 @@
+services:
+  - type: web
+    name: backend
+    env: node
+    buildCommand: npm install
+    startCommand: node backend/src/index.js
+    repo: https://github.com/kaifbidari-code/full-stack
+    branch: main
+  - type: static
+    name: frontend
+    staticPublishPath: frontend/build
+    buildCommand: |
+      cd frontend && npm install && npm run build
+    repo: https://github.com/kaifbidari-code/full-stack
+    branch: main
